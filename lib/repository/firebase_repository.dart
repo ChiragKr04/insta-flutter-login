@@ -6,7 +6,7 @@ class FirebaseRepository {
   Future<void> saveTokenToFb(Map<String, dynamic> userData) async {
     CollectionReference<Map<String, dynamic>> usersTokenCollection =
         FirebaseFirestore.instance.collection('userTokens');
-    String userId = userData["userName"];
+    String userId = userData["username"];
     DocumentReference<Map<String, dynamic>> usersData =
         usersTokenCollection.doc(userId);
 

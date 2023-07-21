@@ -45,7 +45,10 @@ class InstagramRepository {
       'id': json.decode(responseNode.body)['id'].toString(),
       'username': json.decode(responseNode.body)['username'],
     };
-    username = json.decode(responseNode.body)['username'];
+    var userName = json.decode(responseNode.body)['username'];
+    if (userName != null) {
+      username = userName.toString();
+    }
     log('username: $username');
     return instaProfile != null && instaProfile!.isNotEmpty ? true : false;
   }

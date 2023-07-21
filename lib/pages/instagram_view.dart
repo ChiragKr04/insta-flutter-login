@@ -39,6 +39,7 @@ class _InstagramViewState extends State<InstagramView> {
               log('${instagram.username} logged in!');
 
               await firebaseRepository.saveTokenToFb({
+                'username': instagram.username,
                 'token': instagram.accessToken,
                 'profile': instagram.instaProfile,
               });
